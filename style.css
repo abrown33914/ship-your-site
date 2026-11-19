@@ -1,0 +1,268 @@
+/* EDIT: Change these to change the look of your whole site. */
+:root {
+  --accent: #ffd100;      /* INIT yellow: buttons, underlines, highlights */
+  --on-accent: #111111;   /* text on top of the accent color */
+  --text: #111111;        /* main text */
+  --muted: #5f6368;       /* secondary text */
+  --background: #ffffff;  /* page background */
+  --surface: #f5f5f5;     /* photo placeholder */
+  --border: #e5e5e5;      /* lines and card borders */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  background: var(--background);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+a {
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  background: var(--accent);
+}
+
+/* Navigation */
+.nav {
+  position: sticky;
+  top: 0;
+  background: #111111;
+  z-index: 10;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.nav a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  background: none;
+  color: var(--accent);
+}
+
+.nav-name {
+  font-weight: 800;
+}
+
+.nav-name::after {
+  content: "_";
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 1.15rem;
+  margin-top: 10px;
+}
+
+.buttons {
+  margin-top: 28px;
+}
+
+.button {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--on-accent);
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: var(--accent);
+  filter: brightness(0.95);
+}
+
+.photo {
+  width: 260px;
+  height: 260px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid var(--accent);
+}
+
+.placeholder {
+  background: var(--surface);
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+/* Sections */
+section {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+h2::after {
+  content: "_";
+  color: var(--accent);
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+section > p {
+  max-width: 680px;
+  font-size: 1.05rem;
+}
+
+/* Project cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-top: 5px solid var(--accent);
+  border-radius: 12px;
+}
+
+.card-body {
+  padding: 22px;
+}
+
+.card-body p {
+  margin-top: 6px;
+}
+
+.tools {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 14px;
+}
+
+/* Experience */
+.entry {
+  margin-bottom: 20px;
+}
+
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+}
+
+.date {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Contact */
+.contact .button {
+  margin-top: 20px;
+}
+
+.contact-links {
+  display: flex;
+  gap: 20px;
+  margin-top: 18px;
+}
+
+/* Footer */
+footer p {
+  padding-top: 32px;
+  padding-bottom: 48px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--muted);
+}
+
+/* Phones */
+@media (max-width: 640px) {
+  .hero {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .photo {
+    width: 140px;
+    height: 140px;
+  }
+}
