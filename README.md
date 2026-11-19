@@ -27,7 +27,6 @@ Every spot you need to change in `index.html` is marked with an **`EDIT`** comme
 ### Option A: Edit on GitHub (easiest)
  
 1. Open **`index.html`** and click the **pencil icon**.
-   - Or press **`.`** on your keyboard to open a full editor in your browser.
 2. Replace the placeholder text.
 3. Click **Commit changes**.
 ### Option B: Edit in VS Code
